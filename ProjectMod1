@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ProjectMod1 {
+    uint256 public value;
+
+    function setValue(uint256 _value) public {
+        value = _value;
+    }
+
+    function checkValue(uint256 _value) public pure {
+        require(_value >= 10 && _value <= 20, "The inputted value must be between 1 and 20");
+
+        if(_value != 10){
+            revert("The value must be exactly 10");
+        }
+
+    }
+
+    function asserting() public view{
+        assert(value > 5);
+    }
+}
