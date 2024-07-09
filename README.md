@@ -1,45 +1,41 @@
-# Simple Token
-
-This Solidity program is a simple program that utilizes the require(), assert() and revert() statements.
+# ProjectMod1
 
 ## Description
 
-This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has a single function that returns the string "Hello World!". This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
+The ProjectMod1 contract demonstrates the use of require(), assert(), and revert() statements to enforce certain conditions and ensure contract integrity.
 
-## Getting Started
+## Functions
 
-The SimpleToken contract is a basic implementation of a token on the Ethereum blockchain using Solidity. Here are its key components:
+### setValue(uint256 _value): 
+Sets the state variable value to the given _value.
+This function allows users to set the value for the contract.
 
-### State Variables:
+### checkValue(uint256 _value):
+A pure function that takes an input _value and performs checks on it.
+Uses require() to ensure the input value is between 10 and 20 (inclusive).
 
-#### balances: A mapping that tracks the balance of tokens for each address.
+If the condition fails, it reverts the transaction with the message: "The inputted value must be between 10 and 20".
 
-#### totalSupply: Represents the total supply of tokens in the contract.
+Uses revert() to explicitly fail if the input value is not exactly 10.
+If _value is not 10, it reverts the transaction with the message: "The value must be exactly 10".
 
-#### Constructor: Initializes the contract with an initial supply of tokens (_initialSupply) and assigns the entire supply to the address deploying the contract (msg.sender).
+### asserting()
+A view function that uses assert() to check an internal condition.
+Ensures that the state variable value is greater than 5.
 
-#### Functions: 
+If the condition fails, it indicates a critical bug in the contract logic, and the transaction is reverted, consuming all gas.
 
-transfer(address _to, uint256 _value): Allows msg.sender to transfer tokens to another address _to. It checks if the sender has sufficient balance before transferring tokens.
-burn(uint256 _value): Allows msg.sender to burn (destroy) tokens from their own balance. It checks if the sender has sufficient balance and includes a custom revert condition if tokens burned exceed the total supply.
-
-#### Modifiers and Requirements:
-
-The transfer and burn functions use the require statement to enforce conditions such as sufficient balance. The assert statement ensures that operations maintain the integrity of the total supply.
-    
-SPDX-License-Identifier: Indicates the open-source license under which the contract is released.
-
-### Executing program
+## Executing program
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension. Copy and paste the following code into the file:
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.0" (or another compatible version), and then click on the "Compile SimpleToken.sol" button.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.0" (or another compatible version), and then click on the "Compile ProhectMod1.sol" button.
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "SimpleToken" contract from the dropdown menu, and then click on the "Deploy" button.
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "ProhectMod1" contract from the dropdown menu, and then click on the "Deploy" button.
 
-Once the contract is deployed, you can interact with it by calling the different functions. Click on the "SimpleToken" contract in the left-hand sidebar, and then click on the one of the functions. Finally, click on the "transact"/"call" button to execute the function and retrieve the "Hello World!" message.
+Once the contract is deployed, you can interact with it by calling the different functions. Click on the "ProhectMod1" contract in the left-hand sidebar, and then click on the one of the functions. Finally, click on the functions button to execute the function and retrieve the value and/or error message.
 
 ## Authors
 
